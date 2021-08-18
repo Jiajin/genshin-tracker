@@ -6,6 +6,10 @@ import GenshinRegion from "./GenshinRegion";
 
 const GenshinTracker = () => {
   const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+  // const [currWeekday, setCurrWeekday] = useState({
+  //   weekday: weekdays[0],
+  //   selected: true,
+  // });
   const [currWeekday, setCurrWeekday] = useState(weekdays[0]);
   const [regionOneData, setRegionOneData] = useState(
     genshinData.filter(
@@ -44,7 +48,7 @@ const GenshinTracker = () => {
         {weekdays.map((weekday) => (
           <div
             key={weekday} //this is not used except prevent compiler warnings
-            className="weekdays"
+            className={`weekdays ${weekday === currWeekday ? "selected" : ""}`}
             onClick={() => weekdayClickHandler(weekday)}
           >
             {weekday}
