@@ -5,31 +5,41 @@ import genshinData from "../../genshin/characters";
 import GenshinRegion from "./GenshinRegion";
 
 const GenshinTracker = () => {
-  //todo: filter by day
   const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-  const { currWeekday, setCurrWeekday } = useState(weekdays[0]);
-  const { regionOneData, setRegionOneData } = useState(
+  const [currWeekday, setCurrWeekday] = useState(weekdays[0]);
+  const [regionOneData, setRegionOneData] = useState(
     genshinData.filter(
       (item) => item.region === "mondsteadt" && item.day.includes(weekdays[0])
     )
   );
+  const [regionTwoData, setRegionTwoData] = useState(
+    genshinData.filter(
+      (item) => item.region === "liyue" && item.day.includes(weekdays[0])
+    )
+  );
+
   const weekdayClickHandler = (day) => {
-    //console.log(regionOneData);
-    console.log(
+    console.log(day);
+    setCurrWeekday(day);
+    setRegionOneData(
       genshinData.filter(
-        (item) => item.region === "mondsteadt" && item.day.includes("mon")
+        (item) => item.region === "mondsteadt" && item.day.includes(day)
+      )
+    );
+    setRegionTwoData(
+      genshinData.filter(
+        (item) => item.region === "liyue" && item.day.includes(day)
       )
     );
   };
-  const mondsteadt = genshinData.filter(
-    (item) => item.region === "mondsteadt" && item.book === "freedom"
-  );
-  const liyue = genshinData.filter(
-    (item) => item.region === "liyue" && item.book === "gold"
-  );
 
+  // const seeData = () => {
+  //   console.log(currWeekday);
+  //   console.log(regionOneData[0].day);
+  // };
   return (
     <div>
+      {/* <button onClick={seeData}>Test</button> */}
       <div className="parent">
         {weekdays.map((weekday) => (
           <div
@@ -41,8 +51,8 @@ const GenshinTracker = () => {
           </div>
         ))}
       </div>
-      <GenshinRegion singleRegion={mondsteadt} />
-      <GenshinRegion singleRegion={liyue} />
+      <GenshinRegion singleRegion={regionOneData} />
+      <GenshinRegion singleRegion={regionTwoData} />
     </div>
   );
 };

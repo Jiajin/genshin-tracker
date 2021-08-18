@@ -10,6 +10,7 @@
   color: maroon;
   background-color: lightgreen;
   text-transform: capitalize;
+  cursor: pointer;
 }
 .selected {
   border: 1px solid #006400;
@@ -36,6 +37,7 @@
   border: 2px solid #000000;
   padding: 20px;
   margin: 10px;
+  text-transform: capitalize;
 }
 .break {
   flex-basis: 100%;
