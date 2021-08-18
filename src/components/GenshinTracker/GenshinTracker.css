@@ -10,6 +10,7 @@
   padding: 20px;
   flex-grow: 1;
   text-align: center;
+  text-transform: capitalize;
 }
 .characters {
   display: flex;

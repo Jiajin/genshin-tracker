@@ -5,6 +5,7 @@ import genshinData from "../../genshin/characters";
 import GenshinRegion from "./GenshinRegion";
 
 const GenshinTracker = () => {
+  //todo: filter by day
   const mondsteadt = genshinData.filter(
     (item) => item.region === "mondsteadt" && item.book === "freedom"
   );
