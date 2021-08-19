@@ -24,8 +24,12 @@ const Preferences = () => {
   };
   return (
     <div className="parent">
-      <button onClick={() => checkAll(true)}>Select All</button>
-      <button onClick={() => checkAll(false)}>Unselect All</button>
+      <button className="myButton" onClick={() => checkAll(true)}>
+        Select All
+      </button>
+      <button className="myButton" onClick={() => checkAll(false)}>
+        Unselect All
+      </button>
       <div className="parent">
         {" "}
         {userPref.map((char) => {
