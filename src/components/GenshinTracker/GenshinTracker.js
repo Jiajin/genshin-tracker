@@ -1,51 +1,67 @@
 import React, { useState } from "react";
 
 import "./GenshinTracker.css";
-import genshinData from "../../genshin/characters";
 import GenshinRegion from "./GenshinRegion";
 
-const GenshinTracker = () => {
+const GenshinTracker = ({ userPref }) => {
   const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-  // const [currWeekday, setCurrWeekday] = useState({
-  //   weekday: weekdays[0],
-  //   selected: true,
-  // });
+
   const [currWeekday, setCurrWeekday] = useState(weekdays[0]);
 
-  const [regionOneData, setRegionOneData] = useState(
-    genshinData.filter(
+  //Setting region data for both regions
+  const [regionOneData, setRegionOneData] = useState({
+    chars: userPref.filter(
+      (item) =>
+        item.region === "mondsteadt" &&
+        item.day.includes(weekdays[0]) &&
+        item.checked === true
+    ),
+    book: userPref.filter(
       (item) => item.region === "mondsteadt" && item.day.includes(weekdays[0])
-    )
-  );
-  const [regionTwoData, setRegionTwoData] = useState(
-    genshinData.filter(
+    )[0].book,
+    region: "mondsteadt",
+  });
+
+  const [regionTwoData, setRegionTwoData] = useState({
+    chars: userPref.filter(
+      (item) =>
+        item.region === "liyue" &&
+        item.day.includes(weekdays[0]) &&
+        item.checked === true
+    ),
+    book: userPref.filter(
       (item) => item.region === "liyue" && item.day.includes(weekdays[0])
-    )
-  );
+    )[0].book,
+    region: "liyue",
+  });
 
   const weekdayClickHandler = (day) => {
     console.log(day);
     setCurrWeekday(day); //for selector
     //Set indiv region data
-    setRegionOneData(
-      genshinData.filter(
-        (item) => item.region === "mondsteadt" && item.day.includes(day)
-      )
-    );
-    setRegionTwoData(
-      genshinData.filter(
-        (item) => item.region === "liyue" && item.day.includes(day)
-      )
-    );
+    setRegionOneData({
+      ...regionOneData,
+      chars: userPref.filter(
+        (item) =>
+          item.region === "mondsteadt" &&
+          item.day.includes(day) &&
+          item.checked === true
+      ),
+    });
+    setRegionTwoData({
+      ...regionTwoData,
+      chars: userPref.filter(
+        (item) =>
+          item.region === "liyue" &&
+          item.day.includes(day) &&
+          item.checked === true
+      ),
+    });
   };
+  console.log(regionOneData);
 
-  // const seeData = () => {
-  //   console.log(currWeekday);
-  //   console.log(regionOneData[0].day);
-  // };
   return (
     <div>
-      {/* <button onClick={seeData}>Test</button> */}
       <div className="parent">
         {weekdays.map((weekday) => (
           <div

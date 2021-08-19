@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 
-import genshinData from "../genshin/characters";
-
 import "./Preferences.css";
-const Preferences = () => {
-  const [userPref, setUserPref] = useState(
-    genshinData.map((char) => {
-      return { ...char, checked: false };
-    })
-  );
+const Preferences = ({ userPref, setUserPref }) => {
   const handleOnChange = (id, state) => {
     console.log(id);
     let itemIndex = userPref.findIndex((item) => item.id === id);
@@ -16,12 +9,14 @@ const Preferences = () => {
     copy[itemIndex].checked = state;
     setUserPref(copy);
   };
+
   const checkAll = (state) => {
     let copy = userPref.map((char) => {
       return { ...char, checked: state };
     });
     setUserPref(copy);
   };
+
   return (
     <div className="parent">
       <button className="myButton" onClick={() => checkAll(true)}>

@@ -5,13 +5,17 @@ const GenshinRegion = ({ singleRegion }) => {
   return (
     <div className="parent">
       <div className="region">
-        {singleRegion[0].region}: {singleRegion[0].book}
+        {singleRegion.region}: {singleRegion.book}
       </div>
       <div className="break"></div>
       <div className="characters">
-        {singleRegion.map((char) => (
-          <TrackerCharacter char={char}></TrackerCharacter>
-        ))}
+        {singleRegion.chars.length === 0 ? (
+          <div>No selected characters for this region today!</div>
+        ) : (
+          singleRegion.chars.map((char) => (
+            <TrackerCharacter char={char}></TrackerCharacter>
+          ))
+        )}
       </div>
     </div>
   );
