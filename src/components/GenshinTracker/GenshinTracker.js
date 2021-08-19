@@ -4,14 +4,14 @@ import "./GenshinTracker.css";
 import genshinData from "../../genshin/characters";
 import GenshinRegion from "./GenshinRegion";
 
-const GenshinTracker = ({ field }) => {
-  console.log(field);
+const GenshinTracker = () => {
   const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
   // const [currWeekday, setCurrWeekday] = useState({
   //   weekday: weekdays[0],
   //   selected: true,
   // });
   const [currWeekday, setCurrWeekday] = useState(weekdays[0]);
+
   const [regionOneData, setRegionOneData] = useState(
     genshinData.filter(
       (item) => item.region === "mondsteadt" && item.day.includes(weekdays[0])

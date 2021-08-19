@@ -12,7 +12,7 @@ import GenshinTracker from "./components/GenshinTracker/GenshinTracker";
 import Preferences from "./components/Preferences";
 
 function App() {
-  const [userPref, setUserPref] = useState([]);
+  //const [userPref, setUserPref] = useState([]);
   return (
     <BrowserRouter className="App">
       <NavLink to="/home">Home Page</NavLink>
