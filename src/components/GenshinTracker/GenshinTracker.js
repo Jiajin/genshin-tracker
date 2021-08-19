@@ -4,35 +4,40 @@ import "./GenshinTracker.css";
 import GenshinRegion from "./GenshinRegion";
 
 const GenshinTracker = ({ userPref }) => {
-  const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+  const weekdays = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  const regionOne = "mondsteadt";
+  const regionTwo = "liyue";
 
-  const [currWeekday, setCurrWeekday] = useState(weekdays[0]);
+  const today = new Date().getDay();
+
+  const [currWeekday, setCurrWeekday] = useState(weekdays[today]);
+
+  const getCheckedCharsByRegionAndDay = (data, region, day) => {
+    return data.filter(
+      (item) =>
+        item.region === region &&
+        item.day.includes(day) &&
+        item.checked === true
+    );
+  };
+  //Returns string for book
+  const getBookByRegionAndDay = (data, region, day) => {
+    return data.filter(
+      (item) => item.region === region && item.day.includes(day)
+    )[0].book;
+  };
 
   //Setting region data for both regions
   const [regionOneData, setRegionOneData] = useState({
-    chars: userPref.filter(
-      (item) =>
-        item.region === "mondsteadt" &&
-        item.day.includes(weekdays[0]) &&
-        item.checked === true
-    ),
-    book: userPref.filter(
-      (item) => item.region === "mondsteadt" && item.day.includes(weekdays[0])
-    )[0].book,
-    region: "mondsteadt",
+    chars: getCheckedCharsByRegionAndDay(userPref, regionOne, weekdays[today]),
+    book: getBookByRegionAndDay(userPref, regionOne, weekdays[today]),
+    region: regionOne,
   });
 
   const [regionTwoData, setRegionTwoData] = useState({
-    chars: userPref.filter(
-      (item) =>
-        item.region === "liyue" &&
-        item.day.includes(weekdays[0]) &&
-        item.checked === true
-    ),
-    book: userPref.filter(
-      (item) => item.region === "liyue" && item.day.includes(weekdays[0])
-    )[0].book,
-    region: "liyue",
+    chars: getCheckedCharsByRegionAndDay(userPref, regionTwo, weekdays[today]),
+    book: getBookByRegionAndDay(userPref, regionTwo, weekdays[today]),
+    region: regionTwo,
   });
 
   const weekdayClickHandler = (day) => {
@@ -41,24 +46,15 @@ const GenshinTracker = ({ userPref }) => {
     //Set indiv region data
     setRegionOneData({
       ...regionOneData,
-      chars: userPref.filter(
-        (item) =>
-          item.region === "mondsteadt" &&
-          item.day.includes(day) &&
-          item.checked === true
-      ),
+      chars: getCheckedCharsByRegionAndDay(userPref, regionOne, day),
+      book: getBookByRegionAndDay(userPref, regionOne, day),
     });
     setRegionTwoData({
       ...regionTwoData,
-      chars: userPref.filter(
-        (item) =>
-          item.region === "liyue" &&
-          item.day.includes(day) &&
-          item.checked === true
-      ),
+      chars: getCheckedCharsByRegionAndDay(userPref, regionTwo, day),
+      book: getBookByRegionAndDay(userPref, regionTwo, day),
     });
   };
-  console.log(regionOneData);
 
   return (
     <div>

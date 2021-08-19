@@ -2,6 +2,7 @@ const CHARACTERS = [
   {
     id: 1,
     name: "amber",
+    element: "pyro",
     day: ["mon", "thu", "sun"],
     region: "mondsteadt",
     book: "freedom",
@@ -9,6 +10,7 @@ const CHARACTERS = [
   {
     id: 2,
     name: "barbara",
+    element: "hydro",
     day: ["mon", "thu", "sun"],
     region: "mondsteadt",
     book: "freedom",
@@ -16,6 +18,7 @@ const CHARACTERS = [
   {
     id: 3,
     name: "klee",
+    element: "pyro",
     day: ["mon", "thu", "sun"],
     region: "mondsteadt",
     book: "freedom",
@@ -23,6 +26,7 @@ const CHARACTERS = [
   {
     id: 4,
     name: "bennett",
+    element: "pyro",
     day: ["tue", "fri", "sun"],
     region: "mondsteadt",
     book: "resistance",
@@ -30,6 +34,7 @@ const CHARACTERS = [
   {
     id: 5,
     name: "diluc",
+    element: "pyro",
     day: ["tue", "fri", "sun"],
     region: "mondsteadt",
     book: "resistance",
@@ -37,6 +42,7 @@ const CHARACTERS = [
   {
     id: 6,
     name: "jean",
+    element: "anemo",
     day: ["tue", "fri", "sun"],
     region: "mondsteadt",
     book: "resistance",
@@ -44,6 +50,7 @@ const CHARACTERS = [
   {
     id: 7,
     name: "fisch",
+    element: "electro",
     day: ["wed", "sat", "sun"],
     region: "mondsteadt",
     book: "ballad",
@@ -51,6 +58,7 @@ const CHARACTERS = [
   {
     id: 8,
     name: "kaeya",
+    element: "cyro",
     day: ["wed", "sat", "sun"],
     region: "mondsteadt",
     book: "resistance",
@@ -58,6 +66,7 @@ const CHARACTERS = [
   {
     id: 9,
     name: "lisa",
+    element: "electro",
     day: ["wed", "sat", "sun"],
     region: "mondsteadt",
     book: "resistance",
@@ -65,6 +74,7 @@ const CHARACTERS = [
   {
     id: 10,
     name: "ningguang",
+    element: "geo",
     day: ["mon", "thu", "sun"],
     region: "liyue",
     book: "prosperity",
@@ -72,6 +82,7 @@ const CHARACTERS = [
   {
     id: 11,
     name: "keqing",
+    element: "electro",
     day: ["mon", "thu", "sun"],
     region: "liyue",
     book: "prosperity",
@@ -79,6 +90,7 @@ const CHARACTERS = [
   {
     id: 12,
     name: "qiqi",
+    element: "cyro",
     day: ["mon", "thu", "sun"],
     region: "liyue",
     book: "prosperity",
@@ -86,6 +98,7 @@ const CHARACTERS = [
   {
     id: 13,
     name: "chongyun",
+    element: "cyro",
     day: ["tue", "fri", "sun"],
     region: "liyue",
     book: "dilligence",
@@ -93,6 +106,7 @@ const CHARACTERS = [
   {
     id: 14,
     name: "xiangling",
+    element: "pyro",
     day: ["tue", "fri", "sun"],
     region: "liyue",
     book: "dilligence",
@@ -100,6 +114,7 @@ const CHARACTERS = [
   {
     id: 15,
     name: "ganyu",
+    element: "cyro",
     day: ["tue", "fri", "sun"],
     region: "liyue",
     book: "dilligence",
@@ -107,6 +122,7 @@ const CHARACTERS = [
   {
     id: 16,
     name: "beidou",
+    element: "electro",
     day: ["wed", "sat", "sun"],
     region: "liyue",
     book: "gold",
@@ -114,6 +130,7 @@ const CHARACTERS = [
   {
     id: 17,
     name: "xingqiu",
+    element: "hydro",
     day: ["wed", "sat", "sun"],
     region: "liyue",
     book: "gold",
@@ -121,6 +138,7 @@ const CHARACTERS = [
   {
     id: 18,
     name: "zhongli",
+    element: "geo",
     day: ["wed", "sat", "sun"],
     region: "liyue",
     book: "gold",
