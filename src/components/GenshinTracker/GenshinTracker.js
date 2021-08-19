@@ -59,18 +59,24 @@ const GenshinTracker = ({ userPref }) => {
   return (
     <div>
       <div className="parent">
-        {weekdays.map((weekday) => (
-          <div
-            key={weekday} //this is not used except prevent compiler warnings
-            className={`weekdays ${weekday === currWeekday ? "selected" : ""}`}
-            onClick={() => weekdayClickHandler(weekday)}
-          >
-            {weekday}
-          </div>
-        ))}
+        <div className="parent eighty-width">
+          {weekdays.map((weekday) => (
+            <div
+              key={weekday} //this is not used except prevent compiler warnings
+              className={`weekdays ${
+                weekday === currWeekday ? "selected" : ""
+              }`}
+              onClick={() => weekdayClickHandler(weekday)}
+            >
+              {weekday}
+            </div>
+          ))}
+        </div>
       </div>
-      <GenshinRegion singleRegion={regionOneData} />
-      <GenshinRegion singleRegion={regionTwoData} />
+      <div className="parent">
+        <GenshinRegion singleRegion={regionOneData} />
+        <GenshinRegion singleRegion={regionTwoData} />
+      </div>
     </div>
   );
 };

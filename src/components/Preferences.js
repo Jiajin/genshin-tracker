@@ -25,7 +25,9 @@ const Preferences = ({ userPref, setUserPref }) => {
       <button className="myButton" onClick={() => checkAll(false)}>
         Unselect All
       </button>
-      <div className="parent">
+
+      <div className="break"></div>
+      <div className="eighty-width parent">
         {" "}
         {userPref.map((char) => {
           return (

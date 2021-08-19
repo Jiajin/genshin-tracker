@@ -3,7 +3,7 @@ import React from "react";
 import TrackerCharacter from "./TrackerCharacter";
 const GenshinRegion = ({ singleRegion }) => {
   return (
-    <div className="parent">
+    <div className="region-parent parent eighty-width">
       <div className="region">
         {singleRegion.region}: {singleRegion.book}
       </div>

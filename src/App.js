@@ -20,7 +20,9 @@ function App() {
   );
   return (
     <BrowserRouter className="App">
-      <NavLink to="/home">Home Page</NavLink>
+      <NavLink classname="navlink" to="/home">
+        Home Page
+      </NavLink>
       <NavLink to="/preferences">Preferences</NavLink>
       <Switch>
         <Route
