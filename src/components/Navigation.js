@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import React from "react";
 
 const Navigation = () => {
@@ -6,13 +7,21 @@ const Navigation = () => {
     <Navbar collapseOnSelect fixed="top">
       {" "}
       <Container>
-        <Navbar.Brand href="/home">Genshin Tracker</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/home">
+          Genshin Tracker
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/preferences">Preferences</Nav.Link>
-            <Nav.Link href="/characters">Characters</Nav.Link>
+            <Nav.Link as={Link} to="/home">
+              Home
+            </Nav.Link>
+            <Nav.Link as={Link} to="/preferences">
+              Preferences
+            </Nav.Link>
+            <Nav.Link as={Link} to="/characters">
+              Characters
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

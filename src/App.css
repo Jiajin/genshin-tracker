@@ -23,9 +23,15 @@ a {
 }
 
 a.active {
-  color: black;
+  color: white;
   font-size: larger;
   margin: 10px;
-  position: relative;
+  /* position: relative; */
   /* border-bottom: 2px solid black; */
+}
+
+.navibar {
+  background-color: black;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
