@@ -34,26 +34,3 @@ label {
   position: relative;
   top: 1px;
 }
-
-/*  hide input  */
-input[type="checkbox"] {
-  display: none;
-}
-
-/* Add X on checked before label */
-input:not(:checked) + label:before {
-  /* content: "• "; */
-  content: "X ";
-}
-
-/*  Add ✓ on checked before label */
-input:checked + label:before {
-  content: "✓ ";
-}
-
-/* <!--Add styling on check -- >  */
-input:checked + label {
-  border: solid 2px lightgreen;
-  background-color: green;
-  color: white;
-}

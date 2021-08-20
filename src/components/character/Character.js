@@ -6,6 +6,7 @@ const Character = ({ id, name, checked, handleClick }) => {
     <div
       className={`character__container ${checked ? "checked" : ""}`}
       onClick={() => handleClick(id, !checked)}
+      data-testid="pref-checkbox"
     >
       {checked ? <span>✓ </span> : <span>X </span>}
       {name}
