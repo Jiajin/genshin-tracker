@@ -1,7 +1,7 @@
 import React from "react";
-import "./Character.css";
+import "./CharCheckbox.css";
 
-const Character = ({ id, name, checked, handleClick }) => {
+const CharCheckbox = ({ id, name, checked, handleClick }) => {
   return (
     <div
       className={`character__container ${checked ? "checked" : ""}`}
@@ -14,4 +14,4 @@ const Character = ({ id, name, checked, handleClick }) => {
   );
 };
 
-export default Character;
+export default CharCheckbox;

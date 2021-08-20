@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Character from "./character/Character";
+import CharCheckbox from "./CharCheckbox";
 
 import "./Preferences.css";
 const Preferences = ({ userPref, setUserPref }) => {
@@ -30,20 +30,7 @@ const Preferences = ({ userPref, setUserPref }) => {
       <div className="break"></div>
       <div className="eighty-width parent">
         {userPref.map((char) => {
-          return (
-            <Character {...char} handleClick={handleOnChange} />
-            // <div>
-            //   <input
-            //     type="checkbox"
-            //     id={`custom-checkbox-${char.id}`}
-            //     name={char.name}
-            //     value={char.name}
-            //     checked={char.checked}
-            //     onChange={() => handleOnChange(char.id, !char.checked)}
-            //   />
-            //   <label for={`custom-checkbox-${char.id}`}>{char.name}</label>
-            // </div>
-          );
+          return <CharCheckbox {...char} handleClick={handleOnChange} />;
         })}
       </div>
     </div>

@@ -7,13 +7,14 @@ import {
   Redirect,
   NavLink,
 } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navigation from "./components/Navigation";
 import GenshinTracker from "./components/GenshinTracker/GenshinTracker";
-import Preferences from "./components/Preferences";
+import Preferences from "./components/Preferences/Preferences";
 
 import genshinData from "./data/characters";
-import Navigation from "./components/Navigation";
-import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
+  console.log("AppLoaded");
   const [userPref, setUserPref] = useState(
     //add a "checked" property to the data for use in Preferences
     genshinData.map((char) => {
@@ -22,11 +23,11 @@ function App() {
   );
   return (
     <BrowserRouter className="App">
-      {/* <div classname="navbar">
+      <div classname="navbar">
         <NavLink to="/home">Home Page</NavLink>
         <NavLink to="/preferences">Preferences</NavLink>
-      </div> */}
-      <Navigation></Navigation>
+      </div>
+      {/* <Navigation></Navigation> */}
       <Switch>
         <Route
           path="/home"
@@ -38,6 +39,12 @@ function App() {
             <Preferences userPref={userPref} setUserPref={setUserPref} />
           )}
         />
+        {/* <Route
+          path="/characters"
+          component={() => (
+            <Preferences userPref={userPref} setUserPref={setUserPref} />
+          )}
+        /> */}
         <Route path="/404" render={() => <div>Page Not Found</div>} />
         <Redirect to="/404"></Redirect>
       </Switch>
