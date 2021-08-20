@@ -29,9 +29,3 @@ a.active {
   /* position: relative; */
   /* border-bottom: 2px solid black; */
 }
-
-.navibar {
-  background-color: black;
-  flex-wrap: nowrap;
-  justify-content: center;
-}

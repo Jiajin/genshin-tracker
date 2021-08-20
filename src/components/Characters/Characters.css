@@ -1,0 +1,17 @@
+.characters__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.characters__list-title {
+}
+.characters__single {
+  border-radius: 10px 10px;
+  /* border: 0px solid #000000; */
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5px;
+  margin: 10px;
+  font-family: "Playfair Display", "Didot", "Times New Roman", Times, serif;
+  text-transform: capitalize;
+}

@@ -30,7 +30,13 @@ const Preferences = ({ userPref, setUserPref }) => {
       <div className="break"></div>
       <div className="eighty-width parent">
         {userPref.map((char) => {
-          return <CharCheckbox {...char} handleClick={handleOnChange} />;
+          return (
+            <CharCheckbox
+              key={char.id}
+              {...char}
+              handleClick={handleOnChange}
+            />
+          );
         })}
       </div>
     </div>

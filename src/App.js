@@ -39,7 +39,7 @@ function App() {
             <Preferences userPref={userPref} setUserPref={setUserPref} />
           )}
         />
-        {/* <Route path="/characters" component={() => <Characters />} /> */}
+        <Route path="/characters" component={Characters} />
         <Route path="/404" render={() => <div>Page Not Found</div>} />
         <Redirect to="/404"></Redirect>
       </Switch>
