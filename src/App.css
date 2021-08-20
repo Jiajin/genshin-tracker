@@ -9,6 +9,9 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+.body {
+  padding-top: 55px;
+}
 
 .eighty-width {
   width: 80%;
@@ -17,7 +20,7 @@
 navbar {
   margin: auto;
 }
-a {
+/* a {
   color: blue;
   text-decoration: none;
 }
@@ -28,4 +31,4 @@ a.active {
   margin: 10px;
   position: relative;
   border-bottom: 2px solid black;
-}
+} */

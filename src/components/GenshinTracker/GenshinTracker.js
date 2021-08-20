@@ -58,7 +58,7 @@ const GenshinTracker = ({ userPref }) => {
 
   return (
     <div>
-      <div className="parent">
+      <div className="parent body">
         <div className="parent eighty-width">
           {weekdays.map((weekday) => (
             <div

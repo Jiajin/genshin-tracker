@@ -11,6 +11,8 @@ import GenshinTracker from "./components/GenshinTracker/GenshinTracker";
 import Preferences from "./components/Preferences";
 
 import genshinData from "./data/characters";
+import Navigation from "./components/Navigation";
+import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [userPref, setUserPref] = useState(
     //add a "checked" property to the data for use in Preferences
@@ -20,10 +22,11 @@ function App() {
   );
   return (
     <BrowserRouter className="App">
-      <div classname="navbar">
+      {/* <div classname="navbar">
         <NavLink to="/home">Home Page</NavLink>
         <NavLink to="/preferences">Preferences</NavLink>
-      </div>
+      </div> */}
+      <Navigation></Navigation>
       <Switch>
         <Route
           path="/home"

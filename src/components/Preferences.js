@@ -19,7 +19,7 @@ const Preferences = ({ userPref, setUserPref }) => {
   };
 
   return (
-    <div className="parent">
+    <div className="parent body">
       <button className="myButton" onClick={() => checkAll(true)}>
         Select All
       </button>
