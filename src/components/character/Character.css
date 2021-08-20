@@ -1,0 +1,13 @@
+.character__container {
+  border: solid 2px lightgreen;
+  background-color: white;
+  color: green;
+  padding: 10px;
+  min-width: 50px;
+  cursor: pointer;
+}
+
+.character__container.checked {
+  background-color: green;
+  color: white;
+}
